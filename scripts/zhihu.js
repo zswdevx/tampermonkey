@@ -15,14 +15,37 @@
 
   const hideTitleAndCloseModal = () => {
     const el = document.querySelector('.QuestionHeader-title')
+    const side = document.querySelectorAll('.Topstory-container > div')[1]
+    const container = document.querySelector('.Topstory-container')
+    const shares = document.querySelectorAll('.Popover.ShareMenu')
     const titles = document.querySelectorAll('.ContentItem-title')
+    const btns = document.querySelectorAll('.Button.VoteButton')
     if (el) {
       el.style.display = 'none'
     }
-    titles.forEach(item => {
-      item.style.fontSize = '14px !important'
-      item.style.fontWeight = '600 !important'
-    })
+    if (side) {
+      side.style.display = 'none'
+    }
+    if (container) {
+      container.style.width = '694px'
+    }
+    if (shares) {
+      shares.forEach(item => {
+        item.style.display = 'none'
+      })
+    }
+    if (titles) {
+      titles.forEach(item => {
+        item.style.fontSize = '14px'
+        item.style.fontWeight = 500
+      })
+    }
+    if (btns) {
+      btns.forEach(item => {
+        item.style.background = 'none'
+        item.style.color = 'initial'
+      })
+    }
   }
 
   const tryCloseModal = () => {
